@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="6sp">
+
+    <TextView
+        android:id="@+id/tv_add_title"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="5sp"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_add_year"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_add_title"
+        android:gravity="center"
+        android:text="Year"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_add_genre"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_add_year"
+        android:gravity="center"
+        android:text="Genre"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_add_id"
+        android:layout_width="120sp"
+        android:layout_height="50sp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_add_genre"
+        android:gravity="center"
+        android:text="ID"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="title"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/et_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_add_title"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal"
+        android:text="1993"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/et_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_year"
+        android:layout_alignTop="@+id/tv_add_genre"
+        android:text="genre"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_genre"
+        android:layout_alignTop="@+id/tv_add_id"
+        android:inputType="numberDecimal"
+        android:text="01"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="addData"
+        android:text="Add Movie"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/et_genre"
+        android:layout_below="@+id/bt_add"
+        android:onClick="showData"
+        android:text="Show"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_show"
+        android:layout_centerHorizontal="true"
+        android:onClick="updateData"
+        android:text="Update"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_update"
+        android:layout_centerHorizontal="true"
+        android:onClick="deleteData"
+        android:text="Delete"
+        android:textSize="30sp" />
+</RelativeLayout>
