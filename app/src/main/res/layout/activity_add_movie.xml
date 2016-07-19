@@ -28,13 +28,13 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/tv_add_genre"
+        android:id="@+id/tv_add_rating"
         android:layout_width="120sp"
         android:layout_height="50sp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tv_add_year"
         android:gravity="center"
-        android:text="Genre"
+        android:text="Rating"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30sp" />
 
@@ -43,7 +43,7 @@
         android:layout_width="120sp"
         android:layout_height="50sp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_add_genre"
+        android:layout_below="@+id/tv_add_rating"
         android:gravity="center"
         android:text="ID"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -69,19 +69,20 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/et_genre"
+        android:id="@+id/et_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/et_year"
-        android:layout_alignTop="@+id/tv_add_genre"
-        android:text="genre"
+        android:layout_alignTop="@+id/tv_add_rating"
+        android:text="5.0"
+        android:inputType="number"
         android:textSize="30sp" />
 
     <EditText
         android:id="@+id/et_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/et_genre"
+        android:layout_alignStart="@+id/et_rating"
         android:layout_alignTop="@+id/tv_add_id"
         android:inputType="numberDecimal"
         android:text="01"
@@ -89,41 +90,41 @@
 
     <Button
         android:id="@+id/bt_add"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="addData"
+        android:onClick="updateData"
         android:text="Add Movie"
         android:textSize="30sp" />
 
     <Button
         android:id="@+id/bt_show"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/et_genre"
-        android:layout_below="@+id/bt_add"
         android:onClick="showData"
         android:text="Show"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_below="@+id/bt_add"
+        android:layout_alignEnd="@+id/bt_update" />
 
     <Button
         android:id="@+id/bt_update"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_show"
         android:layout_centerHorizontal="true"
-        android:onClick="updateData"
-        android:text="Update"
+        android:onClick="ScrapData"
+        android:text="Scrap"
         android:textSize="30sp" />
 
     <Button
         android:id="@+id/bt_delete"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_update"
         android:layout_centerHorizontal="true"
-        android:onClick="deleteData"
+        android:onClick="deleteAllData"
         android:text="Delete"
         android:textSize="30sp" />
 </RelativeLayout>

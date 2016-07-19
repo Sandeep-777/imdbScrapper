@@ -36,7 +36,7 @@ public class MovieDataHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(MovieDataContract.MovieTable.COLUMN_NAME_TITLE, movie.getTitle());
         values.put(MovieDataContract.MovieTable.COLUMN_NAME_YEAR, movie.getYear());
-        values.put(MovieDataContract.MovieTable.COLUMN_NAME_GENRE, movie.getGenre());
+        values.put(MovieDataContract.MovieTable.COLUMN_NAME_GENRE, movie.getRating());
         db.insert(MovieDataContract.MovieTable.TABLE_NAME, null, values);
         db.close();
         return true;
@@ -69,7 +69,7 @@ public class MovieDataHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(MovieDataContract.MovieTable.COLUMN_NAME_TITLE, movie.getTitle());
         values.put(MovieDataContract.MovieTable.COLUMN_NAME_YEAR, movie.getYear());
-        values.put(MovieDataContract.MovieTable.COLUMN_NAME_GENRE, movie.getGenre());
+        values.put(MovieDataContract.MovieTable.COLUMN_NAME_GENRE, movie.getRating());
         db.update(MovieDataContract.MovieTable.TABLE_NAME, values,
                 MovieDataContract.MovieTable._ID + " = ? ",
                 new String[]{Integer.toString(id)});
@@ -81,6 +81,12 @@ public class MovieDataHelper extends SQLiteOpenHelper {
         return db.delete(MovieDataContract.MovieTable.TABLE_NAME,
                 MovieDataContract.MovieTable._ID + " = ? ",
                 new String[]{Integer.toString(id)});
+    }
+
+    public boolean deleteAll() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+ MovieDataContract.MovieTable.TABLE_NAME);
+        return true;
     }
 
     public ArrayList<String> getAllData() {

@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             buffer.append(MovieDataContract.MovieTable.COLUMN_NAME_TITLE + " :" + cursor.getString(1) + "\n");
             buffer.append(MovieDataContract.MovieTable.COLUMN_NAME_YEAR + " :" + cursor.getString(2) + "\n");
             buffer.append(MovieDataContract.MovieTable.COLUMN_NAME_GENRE + " :" + cursor.getString(3) + "\n\n");
-
             Movie movie = new Movie(cursor.getString(1), cursor.getString(2), cursor.getString(3));
             movieList.add(movie);
         }

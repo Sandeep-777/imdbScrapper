@@ -18,7 +18,7 @@ public class AddMovieActivity extends AppCompatActivity {
     MovieDataHelper myDb;
     EditText et_title;
     EditText et_year;
-    EditText et_genre;
+    EditText et_rating;
     EditText et_id;
     Button bt_add;
 
@@ -30,12 +30,12 @@ public class AddMovieActivity extends AppCompatActivity {
         et_title = (EditText) findViewById(R.id.et_title);
         et_id = (EditText) findViewById(R.id.et_id);
         et_year = (EditText) findViewById(R.id.et_year);
-        et_genre = (EditText) findViewById(R.id.et_genre);
+        et_rating = (EditText) findViewById(R.id.et_rating);
         bt_add = (Button) findViewById(R.id.bt_add);
     }
 
     public void addData(View view) {
-        Movie movie = new Movie(et_title.getText().toString(), et_year.getText().toString(), et_genre.getText().toString());
+        Movie movie = new Movie(et_title.getText().toString(), et_year.getText().toString(), et_rating.getText().toString());
         boolean inserted = myDb.insertMovie(movie);
         if (inserted == true) {
             Toast.makeText(view.getContext(), "Movie added to database", Toast.LENGTH_SHORT).show();
@@ -51,7 +51,7 @@ public class AddMovieActivity extends AppCompatActivity {
     }
 
     public void updateData(View view) {
-        Movie movie = new Movie(et_title.getText().toString(), et_year.getText().toString(), et_genre.getText().toString());
+        Movie movie = new Movie(et_title.getText().toString(), et_year.getText().toString(), et_rating.getText().toString());
         boolean updated = myDb.updateData(Integer.valueOf(et_id.getText().toString()), movie);
         if (updated == true) {
             Toast.makeText(view.getContext(), "Movie updated to database", Toast.LENGTH_SHORT).show();
@@ -65,5 +65,18 @@ public class AddMovieActivity extends AppCompatActivity {
         } else
             Toast.makeText(view.getContext(), "Error", Toast.LENGTH_SHORT).show();
     }
+    public void deleteAllData(View view) {
+        boolean deleted = myDb.deleteAll();
+        if (deleted == true) {
+            Toast.makeText(view.getContext(), "all deleted from database", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(view.getContext(), "Error", Toast.LENGTH_SHORT).show();
+    }
 
+    public void ScrapData(View view) {
+        Intent intent = new Intent(AddMovieActivity.this, ScrappingActivity.class);
+
+        Toast.makeText(view.getContext(), "Main Activity", Toast.LENGTH_SHORT).show();
+        AddMovieActivity.this.startActivity(intent);
+    }
 }

@@ -4,7 +4,7 @@ package com.example.sandeep.moviedata;
  * Created by sandeep on 7/18/16.
  */
 public class Movie {
-    private String title, genre, year;
+    private String title, rating, year;
 
     public Movie() {
     }
@@ -12,7 +12,7 @@ public class Movie {
     public Movie(String title, String year, String genre) {
         this.title = title;
         this.year = year;
-        this.genre = genre;
+        this.rating = genre;
     }
 
     public String getTitle() {
@@ -31,11 +31,11 @@ public class Movie {
         this.year = year;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getRating() {
+        return rating;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setRating(String genre) {
+        this.rating = genre;
     }
 }

@@ -8,26 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:weightSum="2"
     tools:context="com.example.sandeep.moviedata.MainActivity">
 
-
-    <TextView
-        android:id="@+id/DB_Name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:padding="10sp"
-        android:text="Movie Database"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:padding="4sp"
         android:scrollbars="vertical" />
 </LinearLayout>
